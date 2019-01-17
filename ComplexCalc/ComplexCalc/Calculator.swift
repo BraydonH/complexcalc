@@ -30,8 +30,25 @@ class Calculator {
         return lhs * rhs
     }
     
+    func multiply(_ nums: [Int]) -> Int {
+        var product = 1
+        for x in nums {
+            product *= x
+        }
+        return product
+    }
+    
     func divide(lhs: Int, rhs: Int) -> Int {
         return lhs / rhs
     }
+    
+    func count(_ nums: [Int]) -> Int {
+        return nums.count
+    }
+    
+    func avg(_ nums: [Int]) -> Int {
+        return add(nums) / nums.count
+    }
+    
     
 }
