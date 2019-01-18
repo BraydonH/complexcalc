@@ -10,6 +10,11 @@ import Foundation
 
 // All your work will go in here
 class Calculator {
+    
+    func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int{
+        return op(lhs, rhs)
+    }
+    
     func add(lhs: Int, rhs: Int) -> Int {
         return lhs + rhs
     }
