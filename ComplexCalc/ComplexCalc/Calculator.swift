@@ -26,12 +26,36 @@ class Calculator {
         return (lhs.0 + rhs.0, lhs.1 + rhs.1)
     }
     
+    func add(lhs: [String : Int], rhs: [String : Int]) -> [String : Int] {
+        var result = lhs
+        for (key, value) in rhs {
+            var leftValue = 0
+            if let tmp = result[key] {
+                leftValue = tmp
+            }
+            result[key] = leftValue + value
+        }
+        return result
+    }
+    
     func subtract(lhs: Int, rhs: Int) -> Int {
         return lhs - rhs
     }
 
     func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
         return (lhs.0 - rhs.0, lhs.1 - rhs.1)
+    }
+    
+    func subtract(lhs: [String : Int], rhs: [String : Int]) -> [String : Int] {
+        var result = lhs
+        for (key, value) in rhs {
+            var leftValue = 0
+            if let tmp = result[key] {
+                leftValue = tmp
+            }
+            result[key] = leftValue - value
+        }
+        return result
     }
     
     func multiply(lhs: Int, rhs: Int) -> Int {
