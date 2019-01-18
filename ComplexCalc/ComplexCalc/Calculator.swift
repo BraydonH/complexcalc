@@ -11,8 +11,22 @@ import Foundation
 // All your work will go in here
 class Calculator {
     
-    func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int{
+    func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int {
         return op(lhs, rhs)
+    }
+    
+    func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
+        assert(beg >= 0 && beg < args.count)
+        var lhs = 0
+        if beg > 0 {
+            lhs = args[beg - 1]
+        }
+        for i in beg...(args.count - 1) {
+            lhs = op(lhs, args[i])
+        }
+        
+        return lhs
+        
     }
     
     func add(lhs: Int, rhs: Int) -> Int {
